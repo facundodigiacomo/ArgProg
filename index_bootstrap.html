@@ -5,23 +5,25 @@
         <title> Titulo de Pagina </title>       <!-- Nombre que aparece en la pagina -->
 
         <!-- Bootstrap CSS -->
-    <link href="bootstrap-5.0.1-dist/css/min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
 
     </head>
 
     <body>
-        <h1>My First Heading</h1>
-        <br>                                    <!-- Salta un renglon-->
+        <img src="img/web-design.png" class="figure-img img-fluid rounded" alt="Mi descripción de imagen" align="right" width=20% height=20% >        <!-- Imagen insertada y comentario -->
+
+        <h1>My First Heading</h1>                             
         <p>My first <b>paragraph</b>.</p>
-
-        <a href="https://www.google.com/"> Ir a Google </a>                  <!-- Link de referimento -->
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="https://www.google.com/"> Ir a Google </a>                    <!-- Link de referimento -->
+            <br>                                                                   <!-- Salta un renglon-->
+            <a class="navbar-brand" href="article.html"> Article </a>
+            <br>
+            <a class="navbar-brand" href="list.html"> List </a>
+        </nav>
         <br>
-        <a href="article.html"> Article </a>
-        <br>
-        <a href="list.html"> List </a>
-        <br>
-        <img src="img/web-design.png" alt="Mi descripción de imagen">        <!-- Imagen insertada y comentario -->
-
        
 
             <h1>Título principal de la practica HTML</h1>
@@ -35,23 +37,67 @@
                     <h3>Segundo subtema Compatibilidad con navegadores.</h3>
                         <p>El soporte para DHTML con acceso al DOM fue introducido en Internet Explorer 4.0. Aunque había otra implementación más básica en Netscape Navigator 4.0, no todos los elementos HTML eran representados en el DOM.</p>
             <br>
-                <h2>Segunda idea principal HTML5.</h2>  
-                    <p>HTML 5 (HyperText Markup Language, versión 5) es la quinta revisión importante del lenguaje básico de la World Wide Web, HTML. HTML5 específica dos variantes de sintaxis para HTML: una «clásica», HTML (text/html), conocida como HTML5, y una variante XHTML conocida como sintaxis XHTML 5 que deberá servirse con sintaxis XML.</p>
-                
-                    <h3>Primer subtema Nuevos elementos</h3>  
-                        <p>HTML5 establece una serie de nuevos elementos y atributos que reflejan el uso típico de los sitios web modernos. Algunos de ellos son técnicamente similares a las etiquetas div y span, pero tienen un significado semántico, como por ejemplo nav (bloque de navegación del sitio web) y footer.</p>
-                    <h3>Segundo subtema Nuevas API y Javascript</h3> 
-                        <p>API para hacer Drag & Drop. Mediante eventos.
-                            API para trabajar Off-Line. Permite descargar todos los contenidos necesarios y trabajar en local.
-                            API de Geolocalización para dispositivos que lo soporten.
-                            API Storage. Facilidad de almacenamiento persistente en local, con bases de datos (basadas en SQLite) o con almacenamiento de objetos por aplicación o por dominio Web (Local Storage y Global Storage). Se dispone de una Base de datos con la posibilidad de hacer consultas SQL.
-                            WebSockets. API de comunicación bidireccional entre páginas. Similar a los Sockets de C.
-                            WebWorkers. Hilos de ejecución en paralelo.
-                            Estándar futuro. System Information API. Acceso al hardware a bajo nivel: red, ficheros, CPU, memoria, puertos USB, cámaras, micrófonos... Muy interesante, pero con numerosas salvedades de seguridad.</p>
-        
-                <h2>Conclusiones</h2>   
-                    <font size="4">HTML es necesario para estructurar el contenido de las web que hoy conocemos y sin duda fue evolucionando con el tiempo</font>
-                    <p>Sin lugar a dudas hay que aprenderlo para ir mejorando la calidad de las paginas web que utilizamos.</p>
+
+
+
+            <!-- Tablas -->
+            <!-- <div class="container">
+                <div class="row">            
+                  <div class="col" style="background-color:lavender;"> Column </div>            
+                  <div class="col" style="background-color:lavenderblush;"> Column </div> 
+                  <div class="col" style="background-color:lavender;"> Column </div>             
+                  <div class="col" style="background-color:lavenderblush;"> Column </div>
+            
+                </div>            
+              </div> -->
+
+              <table class="table">
+                <thead>           
+                  <tr>            
+                    <th scope="col" style="background-color:lavender;">Nro</th>            
+                    <th scope="col" style="background-color:lavenderblush;">Nombre</th>            
+                    <th scope="col" style="background-color:lavender;">Apellido</th>            
+                  </tr>            
+                </thead>            
+                <tbody>            
+                  <tr class="table-primary">            
+                    <th scope="row" >1</th>            
+                    <td>Facundo</td>            
+                    <td>Di Giacomo</td>            
+                  </tr>            
+                  <tr class="table-danger">            
+                    <th scope="row">2</th>            
+                    <td>Juan</td>            
+                    <td>Ramirez</td>            
+                  </tr>            
+                </tbody>            
+              </table>
+
+                <br>    
+
+              <!-- Formulario -->
+              <form style="border:3px solid black;" width=20%>
+                <div class="mb-3">            
+                  <label for="idE" class="form-label">Correo</label>            
+                  <input type="email" class="form-control" id="idE" aria-describedby ="idEH">            
+                  <div id="idEH" class="form-text">Debe ser un correo válido.</div>            
+                </div>
+            
+                <div class="mb-3">            
+                  <label for="exampleInputPassword1" class="form-label">Password</label>            
+                  <input type="password" class="form-control" id="exampleInputPassword1">            
+                </div>
+            
+                <div class="mb-3 form-check">            
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">            
+                  <label class="form-check-label" for="exampleCheck1">Recordarme</label>            
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Enviar</button>            
+            </form>
+
+                <br>  
+
 
 
                     <script src="bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
@@ -59,7 +105,7 @@
 
 
 
-                    <iframe id="altura" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" frameborder="0"></iframe>
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" frameborder="0" width="100%"  height="300px"></iframe>
         
     </body>
 </html>
