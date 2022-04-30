@@ -8,13 +8,11 @@
 
         <title>Facundo Di Giacomo</title>
         <meta name="description" content="Roughly 155 characters">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="script.js"></script>
 
-        <link rel="stylesheet" href="https://maxedn.bootstrapcdn.con/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
 
     </head>
@@ -24,11 +22,10 @@
         <a href="../index.html"> Ir a Home </a>
         <br>
 
-        <div class="btn-edit" onclick="cambiar_color()">
-            <a href="#"> JS Cambia </a>
-            <br>
-        </div>
 
+
+
+        
         <!-- INICIO DE PORFOLIO -->
 
         <div class="card mat-card" id="first-card">
@@ -67,8 +64,72 @@
                         <button type="button" class="btn btn-light">Más</button>
                     </div>
                 </div>
-            </div>
         </div>
+
+        <div class="card mat-card">
+            <div class="card-titles">
+                <ch2>Acerca de</h2>
+                <div class="btn-edit" onclick="cambiar_parrafo()">
+                    <a href="#" class="btn-right">
+                        <i class="fa fa-pen"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p id="text-acercade">Matemático, físico e informático argentino considerado por muchos como el padre de la computación</p>
+            </div>
+            <div>
+                <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display:none">
+            </div>
+
+            
+        </div>
+        
+        <input id="file1" type="file" onchange="showFile(this)">
+
+        <script>
+            function cambiar_parrafo(){
+                document.getElementById("edit-acercade").style.display="block";
+                let texto = document.getElementById("text-acercade").innerText;
+                console.log(texto);
+            };
+
+            function myFunction2(valor){
+                document.getElementById("text-acercade").innerText=valor;
+                
+            };
+
+            function logMessage(message){
+                console.log(message + "<br>");
+            }
+
+            //controla si se presiono un enter
+            let textarea=document.getElementById("edit-acercade")
+            textarea.addEventListener('keyup', (e) => {
+                logMessage (`Key "${e.key}" released [event: keyup]`);
+                if (e. key=="Enter"){
+                    document.getElementById("edit-acercade").style.display="none"
+                }
+            });
+
+            //carga el contenido de un archivo de texto y lo muestra en el parrafo
+             function showFile(input) {
+                let file = input.files[0];
+                alert(`File name: ${file.name}`);               // e.g my.png
+                alert(`Last modified: ${file.lastModified}`);   // e.g 1552830408824
+
+                let reader = new FileReader();
+                reader.readAsText (file);
+                reader.onload = function() {
+                    console.log(reader.result);
+                    document.getElementById("text-acercade").innerText=reader.result;
+                };
+                reader.onerror = function(){
+                    console.log(reader.error);
+                };
+        }
+
+        </script>
 
 
 
