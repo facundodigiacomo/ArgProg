@@ -2,25 +2,24 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
         <title>Facundo Di Giacomo</title>
         <meta name="description" content="Roughly 155 characters">
         <link rel="stylesheet" type="text/css" href="mystyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="script.js"></script>
+
+        <link rel="stylesheet" href="https://maxedn.bootstrapcdn.con/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+
     </head>
 
     <body>
-    <!-- Content -->
-        <div id="profile-background"><img src="img/cover-background.jpg" width="100%"></div>
-
-
-        <script>
-            function cambiar_color(){
-                document.getElementById("profile-background").style.display="block";
-                console.log("toy");
-            };
-        </script>
-
 
         <a href="../index.html"> Ir a Home </a>
         <br>
@@ -29,6 +28,52 @@
             <a href="#"> JS Cambia </a>
             <br>
         </div>
+
+        <!-- INICIO DE PORFOLIO -->
+
+        <div class="card mat-card" id="first-card">
+            <div id="profile-background"><img src="img/cover-background.jpg"></div>
+
+                <div id="info" style="padding: 16px">
+                    <div id="info-img">
+                        <img class="profile-image" src="img/Profile.JPG">
+                        <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-pen"></i></a></div>
+                    </div>
+
+                    <div id="info-data">
+                        <div>
+                            <h1>Facundo Di Giacomo</h1>
+                                <div id="info-company"> Especialista en industria 4.0</div>
+                                <div id="info-contact">
+                                    <span>Rosario (Argentina) </span>
+                                    <span><a href="#">Información de contacto</a></span>
+                                </div>
+                        </div>
+                        <ul id="info-details">
+                            <li><a href="#">
+                                <img src="https://www.conicet.gov.ar/wp-content/uploads/logo-CONICET_opt.png">
+                                <h2>CONICET</h2>
+                            </a></li>
+                            <li><a href="#">
+                                <img src="https://unr.edu.ar/assets/img/logo-unr.png">
+                                <h2>Universidad de Rosario</h2>
+                            </a></li>
+                        </ul>
+                    </div>
+
+                    <div id="info-actions">
+                        <button type="button" class="btn btn-primary">Tengo interés en</button>
+                        <button type="button" class="btn btn-light">Añadir Sección</button>
+                        <button type="button" class="btn btn-light">Más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
         
 
     </body>
