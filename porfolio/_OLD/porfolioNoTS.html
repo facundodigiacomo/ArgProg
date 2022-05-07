@@ -18,7 +18,16 @@
     </head>
 
     <body>
+
+        <a href="../index.html"> Ir a Home </a>
+        <br>
+
+
+
+
+        
         <!-- INICIO DE PORFOLIO -->
+
         <div class="card mat-card" id="first-card">
             <div id="profile-background"><img src="img/cover-background.jpg"></div>
 
@@ -73,31 +82,61 @@
                 <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display:none">
             </div>
 
-
-        <div class="card mat-card">
-            <div id="Nombre"></div>
+            
+            
         </div>
+        
+        <input id="file1" type="file" onchange="showFile(this)">
 
-        <div class="card mat-card">
-            <div id="Apellido"></div>
-        </div>
+        <script>
+            function cambiar_parrafo(){
+                document.getElementById("edit-acercade").style.display="block";
+                let texto = document.getElementById("text-acercade").innerText;
+                console.log(texto);
+            };
 
-        <div class="card mat-card">
-            <div id="Titulos"></div>
-        </div>
+            function myFunction2(valor){
+                document.getElementById("text-acercade").innerText=valor;
+                
+            };
 
-        <div class="card mat-card">
-            <div id="Acercade"></div>
-        </div>
+            function logMessage(message){
+                console.log(message + "<br>");
+            }
 
-        <input type="file" id="file1" onchange="showFile1(this)">
+            //controla si se presiono un enter
+            let textarea=document.getElementById("edit-acercade")
+            textarea.addEventListener('keyup', (e) => {
+                logMessage (`Key "${e.key}" released [event: keyup]`);
+                if (e. key=="Enter"){
+                    document.getElementById("edit-acercade").style.display="none"
+                }
+            });
 
-        <script src="objetos.js"></script>
+            //carga el contenido de un archivo de texto y lo muestra en el parrafo
+             function showFile(input) {
+                let file = input.files[0];
+                alert(`File name: ${file.name}`);               // e.g my.png
+                alert(`Last modified: ${file.lastModified}`);   // e.g 1552830408824
+
+                let reader = new FileReader();
+                reader.readAsText (file);
+                reader.onload = function() {
+                    console.log(reader.result);
+                    document.getElementById("text-acercade").innerText=reader.result;
+                };
+                reader.onerror = function(){
+                    console.log(reader.error);
+                };
+        }
+
+        </script>
+
+
+
 
 
         
-        </div>
-      
 
     </body>
 </html>

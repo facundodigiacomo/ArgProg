@@ -1,1 +1,5 @@
-Rocky Balboa es Rambo
+Acerca de -> Acerda de -> Acerca de
+Nombre
+Apellido
+Titulo 1 
+Titulo 2
